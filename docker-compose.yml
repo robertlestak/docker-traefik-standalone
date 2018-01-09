@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  traefik:
+    image: traefik
+    command: --docker --docker.domain=${PROXY_DOMAIN}
+    restart: always
+    container_name: traefik
+    ports:
+      - "80:80"
+      - "443:443"
+    labels:
+      traefik.enable: "false"
+    networks:
+      - web
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./traefik/traefik.toml:/etc/traefik/traefik.toml
+      - traefik_certs:/etc/traefik/acme
+
+networks:
+  web:
+    external: true
+
+volumes:
+  traefik_certs:
