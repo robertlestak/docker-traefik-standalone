@@ -25,3 +25,5 @@ email = "{ADMIN_EMAIL}"
 storage = "/etc/traefik/acme/acme.json"
 entryPoint = "https"
 OnHostRule = true
+  [acme.httpChallenge]
+    entryPoint = "http"
