@@ -14,9 +14,8 @@ ifdef ADMIN_EMAIL
 	sed "s,{ADMIN_EMAIL},$$ADMIN_EMAIL," $@ > tmp && mv tmp $@
 endif
 
-deploy:
+deploy: clean traefik/traefik.toml
 	docker-compose up -d
-
 
 clean:
 	rm -f traefik/traefik.toml
