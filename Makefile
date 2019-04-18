@@ -7,6 +7,10 @@ ifeq ($(LETSENCRYPT), true)
 else
 	cp traefik/traefik-sample.toml $@
 endif
+ifdef DNS_PROVIDER
+	cp traefik/traefik-ssl-dns-sample.toml $@
+	sed "s,{DNS_PROVIDER},$$DNS_PROVIDER," $@ > tmp && mv tmp $@
+endif
 ifdef PROXY_DOMAIN
 	sed "s,{PROXY_DOMAIN},$$PROXY_DOMAIN," $@ > tmp && mv tmp $@
 endif

@@ -26,5 +26,6 @@ storage = "/etc/traefik/acme/acme.json"
 acmeLogging = true
 entryPoint = "https"
 OnHostRule = true
-  [acme.httpChallenge]
-    entryPoint = "http"
+  [acme.dnsChallenge]
+    provider = "{DNS_PROVIDER}"
+    delayBeforeCheck = 0

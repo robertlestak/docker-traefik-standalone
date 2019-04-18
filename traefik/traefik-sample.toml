@@ -13,4 +13,4 @@ defaultEntryPoints = ["http"]
 endpoint = "unix:///var/run/docker.sock"
 domain = "{PROXY_DOMAIN}"
 watch = true
-exposedbydefault = false
+exposedByDefault = false

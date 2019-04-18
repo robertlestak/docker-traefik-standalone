@@ -6,6 +6,11 @@ services:
     command: --docker --docker.domain=${PROXY_DOMAIN}
     restart: always
     container_name: traefik
+    env_file: $PWD/.env
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager
     ports:
       - "80:80"
       - "443:443"
