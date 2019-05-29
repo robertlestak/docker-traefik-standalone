@@ -2,8 +2,8 @@ version: '3'
 
 services:
   traefik:
-    image: traefik:1.5.2
-    command: --docker --docker.domain=${PROXY_DOMAIN}
+    image: traefik:1.7.11
+    command: --docker --docker.domain=${PROXY_DOMAIN} --web
     restart: always
     container_name: traefik
     env_file: $PWD/.env
@@ -14,6 +14,7 @@ services:
     ports:
       - "80:80"
       - "443:443"
+      - "8080:8080"
     labels:
       traefik.enable: "false"
     networks:
