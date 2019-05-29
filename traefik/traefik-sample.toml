@@ -3,6 +3,9 @@ checkNewVersion = true
 logLevel = "ERROR"
 defaultEntryPoints = ["http"]
 
+[web]
+  address = ":8080"
+
 [entryPoints]
   [entryPoints.http]
   address = ":80"
@@ -14,3 +17,4 @@ endpoint = "unix:///var/run/docker.sock"
 domain = "{PROXY_DOMAIN}"
 watch = true
 exposedByDefault = false
+swarmMode = true

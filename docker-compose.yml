@@ -3,7 +3,6 @@ version: '3'
 services:
   traefik:
     image: traefik:1.7.11
-    command: --docker --docker.domain=${PROXY_DOMAIN} --web
     restart: always
     container_name: traefik
     env_file: $PWD/.env
