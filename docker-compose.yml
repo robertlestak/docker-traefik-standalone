@@ -2,7 +2,7 @@ version: '3'
 
 services:
   traefik:
-    image: traefik:1.7.11
+    image: traefik:1.7.12
     restart: always
     container_name: traefik
     env_file: $PWD/.env
