@@ -1,2 +1,3 @@
 traefik/traefik.toml
 .env
+/certs

@@ -22,6 +22,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./traefik/traefik.toml:/etc/traefik/traefik.toml
       - traefik_certs:/etc/traefik/acme
+      - ./certs:/certs
 
 networks:
   web:
